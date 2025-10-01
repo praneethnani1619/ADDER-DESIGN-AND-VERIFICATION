@@ -25,26 +25,26 @@ Checks if the results are mathematically correct
 
 Reports any errors or mismatches
 
-🔧 Key Components uvm-adder-verification/
-├── 📁 src/
-│   ├── dut.sv              # The actual adder hardware design
-│   ├── interface.sv        # Communication bridge between testbench and design
-│   └── 📁 uvm_components/
-│       ├── seq_item.sv     # Data packet structure for tests
-│       ├── sequencer.sv    # Controls test flow
-│       ├── driver.sv       # Sends data to the adder
-│       ├── monitor.sv      # Observes adder outputs
-│       ├── agent.sv        # Manages driver-monitor-sequencer
-│       ├── scoreboard.sv   # Verifies correctness of results
-│       ├── env.sv          # Test environment container
-│       ├── sequence.sv     # Test scenarios
-│       ├── test.sv         # Main test controller
-│       └── top.sv          # Top-level simulation module
-├── 📁 scripts/
-│   └── run.do             # Simulation run script
-├── 📁 docs/
-│   └── architecture.md    # Detailed technical documentation
-└── README.mdExplained (In Simple Terms)
+uvm-adder-verification/
+├── src/
+│   ├── dut.sv                    # RTL design of the adder
+│   ├── interface.sv              # DUT-testbench interface
+│   └── uvm_components/
+│       ├── seq_item.sv           # Transaction class definition
+│       ├── sequencer.sv          # Sequence coordination
+│       ├── driver.sv             # Stimulus generation
+│       ├── monitor.sv            # Response collection
+│       ├── agent.sv              # Active/passive component
+│       ├── scoreboard.sv         # Result verification
+│       ├── env.sv                # Test environment
+│       ├── sequence.sv           # Test sequences
+│       ├── test.sv               # Test cases
+│       └── top.sv                # Top module
+├── scripts/
+│   └── run.do                   # Simulation script
+├── docs/
+│   └── architecture.md          # Design documentation
+└── README.md                    # Project overview
 1. DUT (Device Under Test) - dut.sv
 This is the actual hardware we're testing - a simple adder
 
